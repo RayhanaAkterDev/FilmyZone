@@ -1,27 +1,23 @@
-import { createBrowserRouter } from "react-router";
-import MainLayout from "@/layouts/MainLayout";
-import Home from "@/pages/Home";
-import Movies from "@/pages/Movies";
-import Genres from "@/pages/Genres";
-import Favorites from "@/pages/Favorites";
-import WatchLater from "@/pages/WatchLater";
+import { createBrowserRouter } from 'react-router';
+import MainLayout from '@/layouts/MainLayout';
+import Home from '@/pages/Home';
+import Movies from '@/pages/Movies';
+import Genres from '@/pages/Genres';
+import Favorites from '@/pages/Favorites';
+import WatchLater from '@/pages/WatchLater';
+import MovieDetails from '@/pages/MovieDetails';
 
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: '/',
         element: <MainLayout />,
         children: [
-            { path: "/", element: <Home /> },
-            { path: "/movies", element: <Movies /> },
-            { path: "/genres", element: <Genres /> },
-            {
-                path: "/favorites",
-                element: <Favorites />,
-            },
-            {
-                path: "/watch-later",
-                element: <WatchLater />,
-            },
+            { path: '/', element: <Home /> },
+            { path: '/movies', element: <Movies /> },
+            { path: '/genres', element: <Genres /> },
+            { path: '/favorites', element: <Favorites /> },
+            { path: '/watch-later', element: <WatchLater /> },
+            { path: '/movies/:movieId', element: <MovieDetails /> },
         ],
     },
 ]);
