@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
     getFavoriteIds,
     isFavorite,
-    toggleFavorite,
+    toggleFavorite as toggleFavoriteStorage,
 } from "@/utils/movieStorage";
 
 const useFavorites = (movieId) => {
@@ -11,33 +11,41 @@ const useFavorites = (movieId) => {
         isFavorite(movieId),
     );
 
+    const [favoriteIds, setFavoriteIds] = useState(() =>
+        getFavoriteIds(),
+    );
+
     useEffect(() => {
-        const syncFavorite = () => {
+        const syncFavorites = () => {
             setFavorite(isFavorite(movieId));
+            setFavoriteIds(getFavoriteIds());
         };
 
         window.addEventListener(
             "movie-storage-change",
-            syncFavorite,
+            syncFavorites,
         );
 
         return () => {
             window.removeEventListener(
                 "movie-storage-change",
-                syncFavorite,
+                syncFavorites,
             );
         };
     }, [movieId]);
 
     const handleToggleFavorite = () => {
-        toggleFavorite(movieId);
-        setFavorite((prev) => !prev);
+        toggleFavoriteStorage(movieId);
+
+        // Update this hook immediately.
+        setFavorite(isFavorite(movieId));
+        setFavoriteIds(getFavoriteIds());
     };
 
     return {
         favorite,
         toggleFavorite: handleToggleFavorite,
-        favoriteIds: getFavoriteIds(),
+        favoriteIds,
     };
 };
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import {
     getWatchLaterIds,
     isWatchLater,
-    toggleWatchLater,
+    toggleWatchLater as toggleWatchLaterStorage,
 } from "@/utils/movieStorage";
 
 const useWatchLater = (movieId) => {
@@ -11,9 +11,14 @@ const useWatchLater = (movieId) => {
         isWatchLater(movieId),
     );
 
+    const [watchLaterIds, setWatchLaterIds] = useState(() =>
+        getWatchLaterIds(),
+    );
+
     useEffect(() => {
         const syncWatchLater = () => {
             setWatchLater(isWatchLater(movieId));
+            setWatchLaterIds(getWatchLaterIds());
         };
 
         window.addEventListener(
@@ -30,14 +35,17 @@ const useWatchLater = (movieId) => {
     }, [movieId]);
 
     const handleToggleWatchLater = () => {
-        toggleWatchLater(movieId);
-        setWatchLater((prev) => !prev);
+        toggleWatchLaterStorage(movieId);
+
+        // Update this hook immediately.
+        setWatchLater(isWatchLater(movieId));
+        setWatchLaterIds(getWatchLaterIds());
     };
 
     return {
         watchLater,
         toggleWatchLater: handleToggleWatchLater,
-        watchLaterIds: getWatchLaterIds(),
+        watchLaterIds,
     };
 };
 

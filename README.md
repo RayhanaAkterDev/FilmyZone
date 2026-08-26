@@ -1,16 +1,128 @@
-# React + Vite
+# 🎬 FilmyZone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+FilmyZone is a modern **movie discovery and collection website** built with React. It allows users to explore movies, browse different genres, discover trending and popular titles, and view detailed information about movies.
 
-Currently, two official plugins are available:
+This project was created as a **React practice project** to strengthen core React concepts while building a realistic, responsive web interface.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## ✨ Features
 
-## React Compiler
+* 🏠 **Home Page** — Discover featured, trending, and popular movies.
+* 🎬 **Movies Page** — Browse and explore the movie collection.
+* 🎭 **Genres Page** — Explore movies by genre.
+* 🔎 **Movie Discovery** — Find movies based on different categories.
+* 📄 **Movie Details** — View detailed information about individual movies.
+* 📱 **Responsive Design** — Optimized for desktop, tablet, and mobile devices.
+* 🧩 **Reusable Components** — Built with reusable React components for maintainability.
+* 🧭 **Client-side Routing** — Navigate between pages using React Router.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🛠️ Technologies Used
 
-## Expanding the ESLint configuration
+* **React**
+* **Vite**
+* **Tailwind CSS**
+* **Flowbite React**
+* **React Router**
+* **React Icons**
+* **JavaScript (ES6+)**
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📚 React Concepts Practiced
+
+This project focuses on practicing the following concepts:
+
+* Components
+* Props
+* `useState`
+* `useEffect`
+* Event handling
+* Conditional rendering
+* Lists and `.map()`
+* API data fetching with `fetch()`
+* React Router
+* Reusable UI components
+* Responsive design with Tailwind CSS
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/
+│   └── images/
+├── components/
+├── layout/
+├── pages/
+│   ├── Home/
+│   ├── Movies/
+│   ├── Genres/
+│   └── MovieDetails/
+├── routes/
+├── App.jsx
+├── main.jsx
+└── index.css
+```
+
+## 🚀 Getting Started
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/RayhanaAkterDev/FilmyZone.git
+```
+
+### 2. Navigate to the project
+
+```bash
+cd FilmyZone
+```
+
+### 3. Install dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+The application will be available at the local development URL provided by Vite.
+
+## 📦 Build for Production
+
+```bash
+npm run build
+```
+
+To preview the production build:
+
+```bash
+npm run preview
+```
+
+## 🎨 Design
+
+FilmyZone uses a clean, warm, and modern visual style designed around a movie-discovery experience.
+
+The interface focuses on:
+
+* Clean layouts
+* Movie poster cards
+* Visual browsing
+* Responsive grids
+* Horizontal movie sections
+* Soft backgrounds
+* Clear typography
+* Simple and intuitive navigation
+
+## 🎯 Project Goal
+
+The main goal of FilmyZone is to practice **React and modern frontend development** by building a complete, realistic project rather than isolated examples.
+
+It serves as a hands-on project for learning how different React concepts work together in a real-world application.
+
+## 👩‍💻 Author
+
+Rayhana Akter Sumaya
+
+Built with ❤️ using React + Vite.
