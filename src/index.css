@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap");
+
+@import "tailwindcss";
+@import "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+
+/* ========================================= */
+
+/* Theme Colors & Styles */
+
+@theme {
+    /* Backgrounds & Canvas */
+    --color-canvas: #f7f5f0;
+    --color-surface: #ffffff;
+    --color-input: #ece9e2;
+
+    /* Primary & Accent */
+    --color-primary: #d87d6b;
+    --color-primary-hover: #c36857;
+    --color-hero-overlay: #1a110e;
+
+    /* Typography */
+    --color-primary-typo: #1e1e1e;
+    --color-secondary-typo: #6e6b68;
+    --color-muted-typo: #a39f99;
+
+    /* Borders & Highlights */
+    --color-rating: #f3b73e;
+    --color-border: #e5e2da;
+    --color-rank: #e2ded7;
+
+    /* Font Families */
+    --font-inter: "Inter", sans-serif;
+    --font-lobster: "Lobster", sans-serif;
+}
+
+/* ========================================= */
+
+body {
+    @apply font-inter;
+}
+
+.btn-primary {
+    @apply rounded-4xl bg-primary px-4 py-2.5 text-xs font-semibold tracking-wide text-white transition-all duration-200 hover:bg-primary-hover hover:-translate-y-0.5 hover:shadow-md focus:ring-2 focus:ring-primary/30 sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3;
+}
+
+.btn-outline {
+    @apply rounded-4xl border border-white/40 bg-transparent px-4 py-2.5 text-xs font-semibold tracking-wide text-white transition-all duration-200 hover:border-white hover:bg-white hover:text-black hover:-translate-y-0.5 hover:shadow-md focus:ring-2 focus:ring-white/30 sm:px-5 sm:py-2.5 sm:text-sm md:px-6 md:py-3;
+}
+
+/* ========================================= */
+/* NAVBAR */
+
+.nav-link {
+    @apply relative pb-3 text-sm font-medium text-secondary-typo
+        transition-colors duration-200 hover:text-primary;
+}
+
+.nav-link::after {
+    content: "";
+    @apply absolute bottom-0 left-0 h-0.5 w-0 rounded-full
+        bg-primary transition-all duration-300 ease-out;
+}
+
+.nav-link:hover::after,
+.nav-link-active::after {
+    @apply w-full;
+}
+
+.nav-link-active {
+    @apply font-bold text-primary;
+}
+/* ========================================= */
+
+/* HERO */
+/* .hero-carousel button {
+    @apply hidden;
+} */
+
+/* ========================================= */
+
+/* FOOTER */
+.footer-title {
+    @apply mb-5 text-sm font-semibold tracking-wide text-primary-typo;
+}
+.footer-link {
+    @apply text-sm text-secondary-typo transition-colors duration-200 hover:text-primary;
+}
+.footer-social {
+    @apply flex h-9 w-9 items-center justify-center rounded-full
+        bg-surface text-secondary-typo transition-all duration-200 hover:bg-primary hover:text-white;
+}
+
+/* ========================================= */
+
+/* TRENDING SECTION */
+.trending-heading {
+    @apply relative mb-3 text-3xl font-black font-lobster capitalize leading-8 tracking-tighter text-primary-typo/80 sm:mb-4 sm:text-4xl sm:leading-10 md:text-5xl md:leading-12;
+}
+
+.trending-heading::after {
+    content: "";
+    @apply absolute bottom-1 left-16 h-0.5 w-9/12 bg-primary-typo/40 sm:left-20 md:bottom-2 md:left-24;
+}
+
+.trending-heading-mostWatched::after {
+    @apply left-28 sm:left-36 md:left-46;
+}
+
+/* ========================================= */
+/* EXPLORE MOVIES */
+
+.exploreMovies::after {
+    content: "";
+    @apply w-full h-full absolute left-0 bg-primary-typo/60 rounded-4xl -z-10;
+}
