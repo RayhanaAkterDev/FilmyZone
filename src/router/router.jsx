@@ -6,6 +6,7 @@ import Genres from '@/pages/Genres';
 import Favorites from '@/pages/Favorites';
 import WatchLater from '@/pages/WatchLater';
 import MovieDetails from '@/pages/MovieDetails';
+import Trending from '../pages/Trending';
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
             { path: '/favorites', element: <Favorites /> },
             { path: '/watch-later', element: <WatchLater /> },
             { path: '/movies/:movieId', element: <MovieDetails /> },
+            { path: '/trending', element: <Trending /> },
         ],
     },
 ]);
