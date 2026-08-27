@@ -1,7 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lobster&display=swap');
 
-@import "tailwindcss";
-@import "flowbite-react/plugin/tailwindcss";
+@import 'tailwindcss';
+@import 'flowbite-react/plugin/tailwindcss';
 @source "../.flowbite-react/class-list.json";
 
 /* ========================================= */
@@ -30,8 +30,8 @@
     --color-rank: #e2ded7;
 
     /* Font Families */
-    --font-inter: "Inter", sans-serif;
-    --font-lobster: "Lobster", sans-serif;
+    --font-inter: 'Inter', sans-serif;
+    --font-lobster: 'Lobster', sans-serif;
 }
 
 /* ========================================= */
@@ -57,7 +57,7 @@ body {
 }
 
 .nav-link::after {
-    content: "";
+    content: '';
     @apply absolute bottom-0 left-0 h-0.5 w-0 rounded-full
         bg-primary transition-all duration-300 ease-out;
 }
@@ -99,7 +99,7 @@ body {
 }
 
 .trending-heading::after {
-    content: "";
+    content: '';
     @apply absolute bottom-1 left-16 h-0.5 w-9/12 bg-primary-typo/40 sm:left-20 md:bottom-2 md:left-24;
 }
 
@@ -111,6 +111,6 @@ body {
 /* EXPLORE MOVIES */
 
 .exploreMovies::after {
-    content: "";
+    content: '';
     @apply w-full h-full absolute left-0 bg-primary-typo/60 rounded-4xl -z-10;
 }

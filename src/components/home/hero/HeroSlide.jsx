@@ -1,6 +1,20 @@
-import Button from "@/components/ui/Button";
+import { useNavigate } from 'react-router';
 
-const HeroSlide = ({ title, description, image }) => {
+import Button from '@/components/ui/Button';
+
+const HeroSlide = ({ title, description, image, movieId, trailer }) => {
+    const navigate = useNavigate();
+
+    const handleWatchNow = () => {
+        if (!trailer) return;
+
+        window.open(trailer, '_blank', 'noopener,noreferrer');
+    };
+
+    const handleSeeDetails = () => {
+        navigate(`/movies/${movieId}`);
+    };
+
     return (
         <div
             className="relative h-full bg-cover bg-center bg-no-repeat"
@@ -21,9 +35,17 @@ const HeroSlide = ({ title, description, image }) => {
                     </p>
 
                     <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 md:mt-10 lg:mt-12">
-                        <Button>Watch Now</Button>
+                        <Button type="button" onClick={handleWatchNow}>
+                            Watch Now
+                        </Button>
 
-                        <Button variant="outline">See Details</Button>
+                        <Button
+                            type="button"
+                            variant="outline"
+                            onClick={handleSeeDetails}
+                        >
+                            See Details
+                        </Button>
                     </div>
                 </div>
             </div>
