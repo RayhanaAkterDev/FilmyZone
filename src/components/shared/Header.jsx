@@ -5,7 +5,6 @@ import {
     NavbarCollapse,
     NavbarToggle,
 } from 'flowbite-react';
-
 import { NavLink, Link } from 'react-router';
 
 import logo from '@/assets/images/shared/logo.png';
@@ -25,10 +24,10 @@ const Header = () => {
             <Navbar
                 fluid
                 rounded
-                className="mx-auto max-w-7xl rounded-none bg-transparent"
+                className="mx-auto max-w-7xl rounded-none bg-transparent px-4 sm:px-6 lg:px-8"
             >
                 {/* Logo */}
-                <NavbarBrand href="/">
+                <NavbarBrand as={Link} to="/">
                     <img
                         src={logo}
                         className="mr-2 h-7 w-auto sm:mr-3 sm:h-8"
@@ -46,25 +45,32 @@ const Header = () => {
                 {/* Right side */}
                 <div className="flex items-center gap-2 md:order-2 sm:gap-3">
                     <Link to="/movies">
-                        <Button className="btn-primary">Explore Movies</Button>
+                        <Button className="btn-primary px-3 py-2 text-xs sm:px-4 sm:text-sm">
+                            Explore Movies
+                        </Button>
                     </Link>
 
                     <NavbarToggle />
                 </div>
 
                 {/* Navigation */}
-                <NavbarCollapse className="pt-3">
-                    {navItems.map((item) => (
-                        <NavLink
-                            key={item.to}
-                            to={item.to}
-                            className={({ isActive }) =>
-                                `nav-link ${isActive ? 'nav-link-active' : ''}`
-                            }
-                        >
-                            {item.label}
-                        </NavLink>
-                    ))}
+                <NavbarCollapse className="mt-3 border-t border-gray-200/70 bg-surface px-1 pb-4 pt-4 md:mt-0 md:border-0 md:bg-transparent md:px-0 md:pb-0 md:pt-0">
+                    <div className="flex flex-col gap-1 md:flex-row md:items-center md:gap-7">
+                        {navItems.map((item) => (
+                            <NavLink
+                                key={item.to}
+                                to={item.to}
+                                end={item.to === '/'}
+                                className={({ isActive }) =>
+                                    `nav-link ${
+                                        isActive ? 'nav-link-active' : ''
+                                    }`
+                                }
+                            >
+                                {item.label}
+                            </NavLink>
+                        ))}
+                    </div>
                 </NavbarCollapse>
             </Navbar>
         </header>
