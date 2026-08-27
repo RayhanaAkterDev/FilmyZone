@@ -9,8 +9,8 @@ const upcomingMovies = [
 
 const UpComing = () => {
     return (
-        <main className="bg-canvas pb-20 pt-28 border-b border-primary/10">
-            <div className="mx-auto max-w-7xl">
+        <main className="border-b border-primary/10 bg-canvas pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24">
+            <div className="max-w-7xl w-11/12 mx-auto px-4">
                 {/* Header */}
 
                 <PageHeader

@@ -13,7 +13,7 @@ const MostWatchedMovieCard = ({ movie }) => {
     return (
         <article
             onClick={handleCardClick}
-            className="group relative h-full min-h-0 w-full cursor-pointer overflow-hidden rounded-2xl bg-input"
+            className="group relative h-72 min-[480px]:h-80 min-[560px]:h-96 sm:h-full w-full cursor-pointer overflow-hidden rounded-2xl bg-input"
         >
             {/* Poster */}
             <img

@@ -42,7 +42,7 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="hero-carousel h-72 md:h-96">
+        <div className="hero-carousel h-72 md:h-96 lg:h-116 mt-18">
             <Carousel
                 theme={{
                     scrollContainer: {

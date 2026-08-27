@@ -24,17 +24,17 @@ const HeroSlide = ({ title, description, image, movieId, trailer }) => {
             <div className="absolute inset-0 bg-hero-overlay/70" />
 
             {/* Content */}
-            <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center px-4 sm:px-6 lg:px-8">
-                <div>
+            <div className="relative z-10 mx-auto flex h-full max-w-7xl items-center lg:px-4 px-6">
+                <div className="flex w-full flex-col items-center justify-center text-center lg:items-start lg:text-left">
                     <h1 className="font-inter text-2xl font-bold text-white sm:text-3xl md:text-4xl lg:text-5xl">
                         {title}
                     </h1>
 
-                    <p className="my-3 max-w-xl text-xs leading-5 text-white/80 sm:my-4 sm:text-sm sm:leading-6 md:text-base">
+                    <p className="my-3 max-w-xl text-xs leading-5 text-white/80 sm:my-4 sm:text-sm sm:leading-6 md:text-base w-10/12 lg:w-full">
                         {description}
                     </p>
 
-                    <div className="mt-6 flex flex-wrap gap-3 sm:mt-8 md:mt-10 lg:mt-12">
+                    <div className="mt-6 flex flex-wrap justify-center gap-3 sm:mt-8 md:mt-10 lg:mt-12 lg:justify-start">
                         <Button type="button" onClick={handleWatchNow}>
                             Watch Now
                         </Button>

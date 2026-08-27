@@ -21,8 +21,12 @@ const Header = () => {
     ];
 
     return (
-        <header className="px-4 sm:px-6 lg:px-8">
-            <Navbar fluid rounded className="mx-auto max-w-7xl px-0 py-4">
+        <header className="fixed left-0 top-0 z-100 w-full border-b border-gray-200/60 bg-surface/95 py-2 backdrop-blur-sm">
+            <Navbar
+                fluid
+                rounded
+                className="mx-auto max-w-7xl rounded-none bg-transparent"
+            >
                 {/* Logo */}
                 <NavbarBrand href="/">
                     <img
@@ -49,7 +53,7 @@ const Header = () => {
                 </div>
 
                 {/* Navigation */}
-                <NavbarCollapse className="pt-5">
+                <NavbarCollapse className="pt-3">
                     {navItems.map((item) => (
                         <NavLink
                             key={item.to}

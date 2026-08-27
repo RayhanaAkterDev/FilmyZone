@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react";
-import { useSearchParams } from "react-router";
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router';
 
-import MovieCard from "@/components/movies/MovieCard";
-import PageHeader from "@/components/shared/PageHeader";
-import Button from "@/components/ui/Button";
+import MovieCard from '@/components/movies/MovieCard';
+import PageHeader from '@/components/shared/PageHeader';
+import Button from '@/components/ui/Button';
 
 const MOVIES_PER_LOAD = 15;
 
 const Movies = () => {
     const [searchParams, setSearchParams] = useSearchParams();
 
-    const selectedGenre = searchParams.get("genre");
+    const selectedGenre = searchParams.get('genre');
 
     const [movies, setMovies] = useState([]);
     const [visibleCount, setVisibleCount] = useState(MOVIES_PER_LOAD);
@@ -18,15 +18,15 @@ const Movies = () => {
     const [loading, setLoading] = useState(true);
     const [loadingMore, setLoadingMore] = useState(false);
 
-    const [error, setError] = useState("");
+    const [error, setError] = useState('');
 
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await fetch("/data/moviesData.json");
+                const response = await fetch('/data/moviesData.json');
 
                 if (!response.ok) {
-                    throw new Error("Failed to fetch movies.");
+                    throw new Error('Failed to fetch movies.');
                 }
 
                 const data = await response.json();
@@ -44,7 +44,10 @@ const Movies = () => {
     // Filter movies by selected genre
     const filteredMovies = selectedGenre
         ? movies.filter((movie) =>
-              movie.genres.some((genre) => genre.toLowerCase() === selectedGenre.toLowerCase())
+              movie.genres.some(
+                  (genre) =>
+                      genre.toLowerCase() === selectedGenre.toLowerCase(),
+              ),
           )
         : movies;
 
@@ -70,19 +73,21 @@ const Movies = () => {
     };
 
     return (
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-7xl w-11/12 px-4 py-20 mt-18">
             <PageHeader
-                eyebrow={selectedGenre ? "Genre" : "Discover"}
-                title={selectedGenre ? "Movies in" : "Stories worth"}
-                highlightedTitle={selectedGenre || "watch."}
+                eyebrow={selectedGenre ? 'Genre' : 'Discover'}
+                title={selectedGenre ? 'Movies in' : 'Stories worth'}
+                highlightedTitle={selectedGenre || 'watch.'}
                 description={
                     selectedGenre
                         ? `Explore our collection of ${selectedGenre.toLowerCase()} movies and discover your next favorite story.`
-                        : "Browse our collection of movies and discover your next favorite story."
+                        : 'Browse our collection of movies and discover your next favorite story.'
                 }
             />
 
-            {loading && <p className="text-sm text-secondary-typo">Loading movies...</p>}
+            {loading && (
+                <p className="text-sm text-secondary-typo">Loading movies...</p>
+            )}
 
             {error && <p className="text-sm text-primary">{error}</p>}
 
@@ -135,7 +140,9 @@ const Movies = () => {
                                         disabled={loadingMore}
                                         className="min-w-40 cursor-pointer"
                                     >
-                                        {loadingMore ? "Loading movies..." : "Load more movies"}
+                                        {loadingMore
+                                            ? 'Loading movies...'
+                                            : 'Load more movies'}
                                     </Button>
                                 </div>
                             )}

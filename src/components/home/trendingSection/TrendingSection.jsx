@@ -1,11 +1,13 @@
-import FeaturedTrendingMovie from "./FeaturedTrendingMovie";
-import MostWatchedMovies from "./MostWatchedMovies";
+import FeaturedTrendingMovie from './FeaturedTrendingMovie';
+import MostWatchedMovies from './MostWatchedMovies';
 
 const TrendingSection = () => {
     return (
-        <section className="mx-auto my-8 grid max-w-7xl grid-cols-12 items-stretch gap-5 rounded-3xl bg-canvas p-4 sm:my-10 sm:gap-6 sm:rounded-4xl sm:p-5 md:my-16 md:gap-8 md:p-6 lg:my-20 lg:p-8">
-            <FeaturedTrendingMovie />
-            <MostWatchedMovies />
+        <section className="max-w-7xl w-11/12 mx-auto px-4 my-10 md:my-16 lg:my-20">
+            <div className="grid grid-cols-12 items-stretch gap-8 bg-canvas rounded-4xl p-5 md:p-6 lg:p-8">
+                <FeaturedTrendingMovie />
+                <MostWatchedMovies />
+            </div>
         </section>
     );
 };

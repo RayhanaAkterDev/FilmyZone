@@ -11,7 +11,7 @@ export function Footer() {
                 aria-hidden="true"
             />
 
-            <div className="relative mx-auto max-w-7xl px-5 py-16 sm:px-6 lg:px-8 lg:py-20">
+            <div className="relative mx-auto max-w-7xl w-11/12 px-4 py-16 lg:py-20">
                 {/* =====================================================
                     BRAND STATEMENT
                 ====================================================== */}

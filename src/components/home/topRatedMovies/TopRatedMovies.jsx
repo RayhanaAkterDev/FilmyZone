@@ -27,8 +27,8 @@ const TopRatedMovies = () => {
     }, []);
 
     return (
-        <section className="py-16 bg-canvas border-y border-primary/10">
-            <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-8">
+        <section className="bg-canvas border-y border-primary/10">
+            <div className="max-w-7xl w-11/12 mx-auto px-4 py-16">
                 {/* Header */}
 
                 <PageHeader

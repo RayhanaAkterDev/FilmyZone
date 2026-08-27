@@ -12,7 +12,7 @@ const Genres = () => {
     };
 
     return (
-        <section className="mx-auto max-w-7xl px-5 py-20 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-7xl w-11/12 px-4 py-20 mt-18">
             <PageHeader
                 eyebrow="Explore"
                 title="Find something"
