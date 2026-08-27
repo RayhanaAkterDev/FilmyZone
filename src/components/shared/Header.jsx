@@ -1,17 +1,23 @@
-import { Button, Navbar, NavbarBrand, NavbarCollapse, NavbarToggle } from "flowbite-react";
+import {
+    Button,
+    Navbar,
+    NavbarBrand,
+    NavbarCollapse,
+    NavbarToggle,
+} from 'flowbite-react';
 
-import { NavLink } from "react-router";
+import { NavLink, Link } from 'react-router';
 
-import logo from "@/assets/images/shared/logo.png";
+import logo from '@/assets/images/shared/logo.png';
 
 const Header = () => {
     const navItems = [
-        { to: "/", label: "Home" },
-        { to: "/movies", label: "Movies" },
-        { to: "/genres", label: "Genres" },
-        { to: "/trending", label: "Trending" },
-        { to: "/favorites", label: "Favorites" },
-        { to: "/watch-later", label: "Watch Later" },
+        { to: '/', label: 'Home' },
+        { to: '/movies', label: 'Movies' },
+        { to: '/genres', label: 'Genres' },
+        { to: '/trending', label: 'Trending' },
+        { to: '/favorites', label: 'Favorites' },
+        { to: '/watch-later', label: 'Watch Later' },
     ];
 
     return (
@@ -35,9 +41,9 @@ const Header = () => {
 
                 {/* Right side */}
                 <div className="flex items-center gap-2 md:order-2 sm:gap-3">
-                    <Button className="btn-primary px-4 py-2 text-xs sm:px-5 sm:py-2.5 sm:text-sm">
-                        Explore Movies
-                    </Button>
+                    <Link to="/movies">
+                        <Button className="btn-primary">Explore Movies</Button>
+                    </Link>
 
                     <NavbarToggle />
                 </div>
@@ -49,7 +55,7 @@ const Header = () => {
                             key={item.to}
                             to={item.to}
                             className={({ isActive }) =>
-                                `nav-link ${isActive ? "nav-link-active" : ""}`
+                                `nav-link ${isActive ? 'nav-link-active' : ''}`
                             }
                         >
                             {item.label}
